@@ -58,7 +58,6 @@ class MainActivity : AppCompatActivity() {
 
         viewpager.adapter = pagerAdapter()
 
-
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
 
             override fun onPageScrollStateChanged(state: Int) {
