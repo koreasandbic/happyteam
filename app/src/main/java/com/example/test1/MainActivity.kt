@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })
-
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
                 R.id.home -> {viewpager.setCurrentItem(0)
