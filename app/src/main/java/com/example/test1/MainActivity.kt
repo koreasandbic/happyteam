@@ -98,6 +98,7 @@ class MainActivity : AppCompatActivity() {
                             Age.setTextColor(Color.WHITE)
                             textView_age.setTextColor(Color.WHITE)
                             textView2.setTextColor(Color.WHITE)
+                            profile.setTextColor(Color.WHITE)
                             frag_mypage.setBackgroundColor(Color.BLACK)
                             bottomNavigationView.setBackgroundColor(Color.BLACK)
                     }
@@ -111,6 +112,7 @@ class MainActivity : AppCompatActivity() {
                             Age.setTextColor(Color.BLACK)
                             textView_age.setTextColor(Color.BLACK)
                             textView2.setTextColor(Color.BLACK)
+                            profile.setTextColor(Color.BLACK)
                             frag_mypage.setBackgroundColor(Color.WHITE)
                             bottomNavigationView.setBackgroundColor(Color.WHITE)
                         }
