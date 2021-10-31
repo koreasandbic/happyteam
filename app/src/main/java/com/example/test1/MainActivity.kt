@@ -155,12 +155,10 @@ class MainActivity : AppCompatActivity() {
             viewpager.removeView(`object` as View)
         }
     }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.tool_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         var intent = Intent(this, Search::class.java)
             when(item.itemId) {
