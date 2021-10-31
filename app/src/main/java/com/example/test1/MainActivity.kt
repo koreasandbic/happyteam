@@ -1,8 +1,9 @@
 package com.example.test1
 
+import android.app.Activity
+import android.app.Instrumentation
 import android.content.Intent
 import android.graphics.Color
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,19 +11,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Switch
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.widget.SwitchCompat
-import androidx.core.view.ViewCompat.setBackground
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
@@ -49,17 +42,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         setSupportActionBar(toolbar)
-
         viewList.add(layoutInflater.inflate(R.layout.frag_home, null))
         viewList.add(layoutInflater.inflate(R.layout.frag_like, null))
         viewList.add(layoutInflater.inflate(R.layout.frag_mypage, null))
-
+        val intent_p = Intent(this, Profile_edit::class.java)
         viewpager.adapter = pagerAdapter()
-
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
-
             override fun onPageScrollStateChanged(state: Int) {
             }
             override fun onPageScrolled(
@@ -102,11 +91,11 @@ class MainActivity : AppCompatActivity() {
                         if (switch1.isChecked){
                             check = 1
                             switch1.setTextColor(Color.WHITE)
-                            textView_NAME.setTextColor(Color.WHITE)
+                            Name.setTextColor(Color.WHITE)
                             textView_name.setTextColor(Color.WHITE)
-                            textView_CAR.setTextColor(Color.WHITE)
+                            Car.setTextColor(Color.WHITE)
                             textView_car.setTextColor(Color.WHITE)
-                            textView_AGE.setTextColor(Color.WHITE)
+                            Age.setTextColor(Color.WHITE)
                             textView_age.setTextColor(Color.WHITE)
                             textView2.setTextColor(Color.WHITE)
                             frag_mypage.setBackgroundColor(Color.BLACK)
@@ -115,11 +104,11 @@ class MainActivity : AppCompatActivity() {
                         else{
                             check = 0
                             switch1.setTextColor(Color.BLACK)
-                            textView_NAME.setTextColor(Color.BLACK)
+                            Name.setTextColor(Color.BLACK)
                             textView_name.setTextColor(Color.BLACK)
-                            textView_CAR.setTextColor(Color.BLACK)
+                            Car.setTextColor(Color.BLACK)
                             textView_car.setTextColor(Color.BLACK)
-                            textView_AGE.setTextColor(Color.BLACK)
+                            Age.setTextColor(Color.BLACK)
                             textView_age.setTextColor(Color.BLACK)
                             textView2.setTextColor(Color.BLACK)
                             frag_mypage.setBackgroundColor(Color.WHITE)
@@ -130,16 +119,26 @@ class MainActivity : AppCompatActivity() {
                         var versionName = BuildConfig.VERSION_NAME
                         Toast.makeText(this, versionName, Toast.LENGTH_SHORT).show()
                     }
+                    profile.setOnClickListener {
+                        startActivityForResult(intent_p, 100)
+                    }
                 }
             }
             true
         }
-
-
         recycle.layoutManager = LinearLayoutManager(this)
         recycle.adapter = CustomAdapter(DataList, this)
-
-
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK) {
+            val message1 = data?.getStringExtra("이름")
+            val message2 = data?.getStringExtra("나이")
+            val message3 = data?.getStringExtra("차종")
+            Name.text = message1
+            Age.text = message2
+            Car.text = message3
+        }
     }
 
     inner class pagerAdapter : PagerAdapter() {
@@ -169,9 +168,6 @@ class MainActivity : AppCompatActivity() {
             }
             return super.onOptionsItemSelected(item)
     }
-
-
-
 }
 
 

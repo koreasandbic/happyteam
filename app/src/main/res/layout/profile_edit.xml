@@ -6,24 +6,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/Age"
+    <EditText
+        android:id="@+id/Edit_Age"
         android:layout_width="130dp"
         android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:hint="없음"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Name" />
+        app:layout_constraintStart_toEndOf="@+id/textView_age"
+        app:layout_constraintTop_toBottomOf="@+id/Edit_Name" />
 
-    <TextView
-        android:id="@+id/Name"
+    <EditText
+        android:id="@+id/Edit_Name"
         android:layout_width="130dp"
         android:layout_height="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:hint="없음"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView_name"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,6 +62,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
+        android:clickable="true"
         app:layout_constraintEnd_toStartOf="@+id/textView_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -74,84 +87,43 @@
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="나이"
         android:textSize="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/Age"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView_Photo"
         app:layout_constraintTop_toBottomOf="@+id/textView_name" />
 
-    <TextView
-        android:id="@+id/Car"
+    <EditText
+        android:id="@+id/Edit_Car"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:hint="없음"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView_car"
-        app:layout_constraintTop_toBottomOf="@+id/Age" />
+        app:layout_constraintTop_toBottomOf="@+id/Edit_Age" />
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="40dp"
-        android:background="?android:attr/listDivider"
-        android:fadingEdge="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_car" />
-
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="409dp"
-        android:layout_height="78dp"
-        android:text="야간모드"
-        android:textColor="@android:color/black"
+    <Button
+        android:id="@+id/save"
+        android:layout_width="127dp"
+        android:layout_height="66dp"
+        android:gravity="center"
+        android:text="저장하기"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="409dp"
-        android:layout_height="78dp"
-        android:clickable="true"
-        android:gravity="center"
-        android:text="앱버전"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
-        app:layout_constraintVertical_bias="0.242" />
-
-    <TextView
-        android:id="@+id/profile"
-        android:layout_width="409dp"
-        android:layout_height="78dp"
-        android:clickable="true"
-        android:gravity="center"
-        android:text="프로필 편집"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_car"
+        app:layout_constraintVertical_bias="0.746" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
