@@ -1,17 +1,16 @@
 package com.example.test1
 
 import android.app.Activity
-import android.app.Instrumentation
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
@@ -19,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -133,13 +133,18 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode == Activity.RESULT_OK) {
-            val message1 = data?.getStringExtra("이름")
-            val message2 = data?.getStringExtra("나이")
-            val message3 = data?.getStringExtra("차종")
-            Name.text = message1
-            Age.text = message2
-            Car.text = message3
+        when(resultCode){
+            Activity.RESULT_OK -> {
+                val message1 = data?.getStringExtra("name")
+                val message2 = data?.getStringExtra("age")
+                val message3 = data?.getStringExtra("car")
+                val byteArray = data?.getByteArrayExtra("image")
+                val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
+                Name.text = message1
+                Age.text = message2
+                Car.text = message3
+                Photo.setImageBitmap(bitmap)
+            }
         }
     }
 
