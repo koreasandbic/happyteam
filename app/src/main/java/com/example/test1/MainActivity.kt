@@ -23,19 +23,16 @@ import kotlinx.android.synthetic.main.frag_mypage.*
 class MainActivity : AppCompatActivity() {
 
     val DataList = arrayListOf(
-        Data(R.drawable.ic_launcher_background, name = "0번"),
-        Data(R.drawable.ic_launcher_background, name = "1번"),
-        Data(R.drawable.ic_launcher_background, name = "2번"),
-        Data(R.drawable.ic_launcher_background, name = "3번"),
-        Data(R.drawable.ic_launcher_background, name = "4번"),
-        Data(R.drawable.ic_launcher_background, name = "5번"),
-        Data(R.drawable.ic_launcher_background, name = "6번"),
-        Data(R.drawable.ic_launcher_background, name = "7번"),
-        Data(R.drawable.ic_launcher_background, name = "8번"),
-        Data(R.drawable.ic_launcher_background, name = "9번"),
-        Data(R.drawable.ic_launcher_background, name = "10번"),
-        Data(R.drawable.ic_launcher_background, name = "11번"),
-        Data(R.drawable.ic_launcher_background, name = "12번")
+        Data(profile = R.mipmap.hwa_1, name = "화성방조제길"),
+        Data(R.mipmap.paju_1, name = "자유로"),
+        Data(R.mipmap.pochen, name = "국립수목원로"),
+        Data(R.mipmap.gapeong, name = "청평호반길,북한강변길"),
+        Data(R.mipmap.gwang, name = "남한산성,팔당호 벚꽃길"),
+        Data(R.mipmap.nam, name = "화음길"),
+        Data(R.mipmap.yang, name = "두물머리 강변길"),
+        Data(R.mipmap.yong, name = "가실벚꽃길"),
+        Data(R.mipmap.ansung, name = "금광호수로"),
+        Data(R.mipmap.ansan, name = "시화방조제길")
     )
     var viewList = ArrayList<View> ()
     var check = 0
