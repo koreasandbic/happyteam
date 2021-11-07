@@ -35,6 +35,63 @@ class CustomAdapter(val DataList:ArrayList<Data>, val context:Context) : Recycle
 
         holder.itemView.setOnClickListener{
             Toast.makeText(context, curData.name, Toast.LENGTH_SHORT).show()
+            if(curData.name=="화성방조제길")
+            {val intent = Intent( context, Hwasung::class.java)
+                context.startActivity(intent)}
+            else if(curData.name=="자유로") {
+                run {
+                    val intent = Intent(context, Paju::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="국립수목원로") {
+                run {
+                    val intent = Intent(context, Pocheon::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="청평호반길,북한강변길") {
+                run {
+                    val intent = Intent(context, Gapeong::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="남한산성,팔당호 벚꽃길") {
+                run {
+                    val intent = Intent(context, Gwangju::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="화음길") {
+                run {
+                    val intent = Intent(context, Namyang::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="두물머리 강변길") {
+                run {
+                    val intent = Intent(context, Yangpyeong::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="가실벚꽃길") {
+                run {
+                    val intent = Intent(context, Yongin::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="금광호수로") {
+                run {
+                    val intent = Intent(context, Ansung::class.java)
+                    context.startActivity(intent)
+                }
+            }
+            else if(curData.name=="시화방조제길") {
+                run {
+                    val intent = Intent(context, Ansan::class.java)
+                    context.startActivity(intent)
+                }
+            }
         }
     }
 }
