@@ -44,6 +44,7 @@
             android:value="AIzaSyCUU215eY-rWpRUgX9FQVgw8TiiUcyFo68" />
 
         <activity android:name=".Search" />
+        <activity android:name=".Profile_edit" /> //지우지마~!!!
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
