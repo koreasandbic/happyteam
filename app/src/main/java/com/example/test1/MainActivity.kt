@@ -125,8 +125,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
         recycle.layoutManager = LinearLayoutManager(this)
         recycle.adapter = CustomAdapter(DataList, this)
+
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

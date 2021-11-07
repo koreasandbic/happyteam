@@ -29,7 +29,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Ansan"></activity>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Ansan" />
         <activity android:name=".Ansung" />
         <activity android:name=".Yongin" />
         <activity android:name=".Gwangju" />
@@ -38,6 +45,7 @@
         <activity android:name=".Gapeong" />
         <activity android:name=".Pocheon" />
         <activity android:name=".Paju" />
+        <activity android:name=".Hwasung" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -45,11 +53,7 @@
 
         <activity android:name=".Search" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <uses-library
