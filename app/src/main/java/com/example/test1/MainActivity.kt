@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity() {
                     recycle.visibility = View.INVISIBLE
                     if(check == 1){
                         frag_like.setBackgroundColor(Color.BLACK)
-                        it.setIcon(R.drawable.ic_star_dark)
                     }
                     else{
                         frag_like.setBackgroundColor(Color.WHITE)
