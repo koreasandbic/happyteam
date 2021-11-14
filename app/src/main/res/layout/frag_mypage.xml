@@ -119,6 +119,7 @@
         android:background="?android:attr/listDivider"
         android:fadingEdge="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_car" />
 
@@ -129,11 +130,10 @@
         android:text="야간모드"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <TextView
         android:id="@+id/textView2"
@@ -145,12 +145,10 @@
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintTop_toBottomOf="@+id/course" />
 
     <TextView
         android:id="@+id/profile"
@@ -161,12 +159,10 @@
         android:text="프로필 편집"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
     <TextView
         android:id="@+id/course"
@@ -177,10 +173,10 @@
         android:text="내가 방문한 코스"
         android:textColor="@android:color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/profile" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

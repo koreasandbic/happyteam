@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         viewList.add(layoutInflater.inflate(R.layout.frag_like, null))
         viewList.add(layoutInflater.inflate(R.layout.frag_mypage, null))
         val intent_p = Intent(this, Profile_edit::class.java)
+        val intent_c = Intent(this, My_Course::class.java)
         viewpager.adapter = pagerAdapter()
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
@@ -120,6 +121,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     profile.setOnClickListener {
                         startActivityForResult(intent_p, 100)
+                    }
+                    course.setOnClickListener{
+                        startActivity(intent_c)
                     }
                 }
             }

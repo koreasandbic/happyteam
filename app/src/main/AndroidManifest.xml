@@ -53,6 +53,7 @@
 
         <activity android:name=".Search" />
         <activity android:name=".Profile_edit" />
+        <activity android:name=".My_Course" />
         <activity android:name=".MainActivity">
 
         </activity>
