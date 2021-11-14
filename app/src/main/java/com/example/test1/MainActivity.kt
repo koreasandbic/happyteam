@@ -18,8 +18,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
-
-
 class MainActivity : AppCompatActivity() {
 
     val DataList = arrayListOf(
@@ -78,6 +76,7 @@ class MainActivity : AppCompatActivity() {
                     recycle.visibility = View.INVISIBLE
                     if(check == 1){
                         frag_like.setBackgroundColor(Color.BLACK)
+                        it.setIcon(R.drawable.ic_star_dark)
                     }
                     else{
                         frag_like.setBackgroundColor(Color.WHITE)
