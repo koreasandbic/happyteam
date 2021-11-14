@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                             textView_name.setTextColor(Color.WHITE)
                             Car.setTextColor(Color.WHITE)
                             textView_car.setTextColor(Color.WHITE)
+                            course.setTextColor(Color.WHITE)
                             Age.setTextColor(Color.WHITE)
                             textView_age.setTextColor(Color.WHITE)
                             textView2.setTextColor(Color.WHITE)
@@ -109,11 +110,12 @@ class MainActivity : AppCompatActivity() {
                             textView_car.setTextColor(Color.BLACK)
                             Age.setTextColor(Color.BLACK)
                             textView_age.setTextColor(Color.BLACK)
+                            course.setTextColor(Color.BLACK)
                             textView2.setTextColor(Color.BLACK)
                             profile.setTextColor(Color.BLACK)
                             frag_mypage.setBackgroundColor(Color.WHITE)
                             bottomNavigationView.setBackgroundColor(Color.WHITE)
-                        }
+                    }
                     }
                     textView2.setOnClickListener {
                         var versionName = BuildConfig.VERSION_NAME
