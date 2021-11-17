@@ -20,6 +20,7 @@ class Signup : AppCompatActivity() {
             createAccount(Make_id.text.toString(),Make_password.text.toString())
         }
     }
+
     private fun createAccount(email: String, password: String) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
             auth?.createUserWithEmailAndPassword(email, password)
