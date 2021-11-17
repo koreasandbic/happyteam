@@ -12,7 +12,4 @@ class Search : AppCompatActivity() {
         setContentView(R.layout.search)
 
     }
-
-
-
 }

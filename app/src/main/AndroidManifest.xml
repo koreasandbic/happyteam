@@ -50,7 +50,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCUU215eY-rWpRUgX9FQVgw8TiiUcyFo68" />
-
+        <activity android:name=".Login" />
+        <activity android:name=".Signup"/>
         <activity android:name=".Search" />
         <activity android:name=".Profile_edit" />
         <activity android:name=".My_Course" />
