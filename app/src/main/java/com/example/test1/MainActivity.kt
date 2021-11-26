@@ -1,9 +1,12 @@
 package com.example.test1
 
+import User_info
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -11,17 +14,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
+import com.firebase.ui.storage.BuildConfig
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_splash.*
-import kotlinx.android.synthetic.main.custom_list.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
-class MainActivity : AppCompatActivity() {
+import java.net.URI
+import java.net.URL
 
+
+class MainActivity : AppCompatActivity() {
+    private var auth : FirebaseAuth? = null
     val DataList = arrayListOf(
         Data(profile = R.mipmap.hwa_1, name = "화성방조제길"),
         Data(R.mipmap.paju_1, name = "자유로"),
@@ -37,6 +52,11 @@ class MainActivity : AppCompatActivity() {
     var viewList = ArrayList<View> ()
     var check = 0
     override fun onCreate(savedInstanceState: Bundle?) {
+        var uid : String = "" // 각 해당하는 회원의 유저아이디를 가져온다.
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            uid = user.uid
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
@@ -46,6 +66,7 @@ class MainActivity : AppCompatActivity() {
         val intent_p = Intent(this, Profile_edit::class.java)
         val intent_c = Intent(this, My_Course::class.java)
         viewpager.adapter = pagerAdapter()
+        auth = Firebase.auth
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
             }
@@ -84,7 +105,24 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 R.id.profile -> {viewpager.setCurrentItem(2)
+                    val storage = Firebase.storage
+                    val storageRef = storage.reference
+                    var db = Firebase.firestore
                     recycle.visibility = View.INVISIBLE
+                    var info = db.collection("user").document(uid)
+                    info.get().addOnSuccessListener { documentSnapshot ->
+                        var data = documentSnapshot.toObject<User_info>()
+                        Name.setText(data?.DB_Name)
+                        Age.setText(data?.DB_Age)
+                        Car.setText(data?.DB_Car)
+                        var islandRef = storageRef.child(uid)
+                        val ONE_MEGABYTE: Long = 1024 * 1024
+                        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
+                            var bitmap : Bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
+                            Photo.setImageBitmap(bitmap)
+                        }
+                    }
+                    //데이터 베이스에 저장되어 있는 데이터들을 user_info데이터 클래스로 불러온다. 그후 이름,나이,차종을 저장한다.
                     switch1.setOnClickListener {
                         if (switch1.isChecked){
                             check = 1
@@ -96,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                             course.setTextColor(Color.WHITE)
                             Age.setTextColor(Color.WHITE)
                             textView_age.setTextColor(Color.WHITE)
-                            textView2.setTextColor(Color.WHITE)
+                            App_version.setTextColor(Color.WHITE)
                             profile.setTextColor(Color.WHITE)
                             frag_mypage.setBackgroundColor(Color.BLACK)
                             bottomNavigationView.setBackgroundColor(Color.BLACK)
@@ -111,14 +149,14 @@ class MainActivity : AppCompatActivity() {
                             Age.setTextColor(Color.BLACK)
                             textView_age.setTextColor(Color.BLACK)
                             course.setTextColor(Color.BLACK)
-                            textView2.setTextColor(Color.BLACK)
+                            App_version.setTextColor(Color.BLACK)
                             profile.setTextColor(Color.BLACK)
                             frag_mypage.setBackgroundColor(Color.WHITE)
                             bottomNavigationView.setBackgroundColor(Color.WHITE)
                     }
                     }
-                    textView2.setOnClickListener {
-                        var versionName = BuildConfig.VERSION_NAME
+                    App_version.setOnClickListener {
+                        val versionName = BuildConfig.VERSION_NAME
                         Toast.makeText(this, versionName, Toast.LENGTH_SHORT).show()
                     }
                     profile.setOnClickListener {
@@ -127,6 +165,12 @@ class MainActivity : AppCompatActivity() {
                     course.setOnClickListener{
                         startActivity(intent_c)
                     }
+                    Logout.setOnClickListener{
+                        val intent = Intent(this, Login::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)//화면 전환
+                        auth?.signOut()
+                    }//인텐트를 사용하여 로그인 화면으로 이동하면서 로그아웃을 한다.
                 }
             }
             true
@@ -141,12 +185,12 @@ class MainActivity : AppCompatActivity() {
                 val message1 = data?.getStringExtra("name")
                 val message2 = data?.getStringExtra("age")
                 val message3 = data?.getStringExtra("car")
-                val byteArray = data?.getByteArrayExtra("image")
-                val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
+                //val byteArray = data?.getByteArrayExtra("image")
+                //val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
                 Name.text = message1
                 Age.text = message2
                 Car.text = message3
-                Photo.setImageBitmap(bitmap)
+                //Photo.setImageBitmap(bitmap)
             }
         }
     }
@@ -177,5 +221,4 @@ class MainActivity : AppCompatActivity() {
             return super.onOptionsItemSelected(item)
     }
 }
-
 
