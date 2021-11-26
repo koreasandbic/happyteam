@@ -117,6 +117,7 @@ class MainActivity : AppCompatActivity() {
                             Photo.setImageBitmap(bitmap)
                         }
                     }
+
                     //데이터 베이스에 저장되어 있는 데이터들을 user_info데이터 클래스로 불러온다. 그후 이름,나이,차종을 저장한다.
                     switch1.setOnClickListener {
                         if (switch1.isChecked){
