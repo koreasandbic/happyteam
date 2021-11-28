@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.profile_edit.*
 import java.io.ByteArrayOutputStream
@@ -55,8 +54,10 @@ class Profile_edit : AppCompatActivity() {
             nextIntent.putExtra("age", age)
             nextIntent.putExtra("car", car)
             //nextIntent.putExtra("image", byteArray)
-            val User = User_info(name,age,car)
-            db.collection("user").document(uid).set(User)
+            var info = db.collection("user").document(uid)
+            info.update("db_Name", name)
+            info.update("db_Age", age)
+            info.update("db_Car", car)
             setResult(Activity.RESULT_OK, nextIntent)
             finish()
         }

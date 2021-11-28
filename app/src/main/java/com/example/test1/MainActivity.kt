@@ -12,7 +12,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +28,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
+
 
 class MainActivity : AppCompatActivity() {
     private var auth : FirebaseAuth? = null
@@ -81,8 +81,7 @@ class MainActivity : AppCompatActivity() {
         })
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
-                R.id.home -> {
-                    viewpager.currentItem = 0
+                R.id.home -> {viewpager.setCurrentItem(0)
                     recycle.visibility = View.VISIBLE
                     if(check == 1){
                         frag_home.setBackgroundColor(Color.BLACK)
@@ -91,8 +90,7 @@ class MainActivity : AppCompatActivity() {
                         frag_home.setBackgroundColor(Color.WHITE)
                     }
                 }
-                R.id.like -> {
-                    viewpager.currentItem = 1
+                R.id.like -> {viewpager.setCurrentItem(1)
                     recycle.visibility = View.INVISIBLE
                     if(check == 1){
                         frag_like.setBackgroundColor(Color.BLACK)
@@ -101,8 +99,7 @@ class MainActivity : AppCompatActivity() {
                         frag_like.setBackgroundColor(Color.WHITE)
                     }
                 }
-                R.id.profile -> {
-                    viewpager.currentItem = 2
+                R.id.profile -> {viewpager.setCurrentItem(2)
                     val storage = Firebase.storage
                     val storageRef = storage.reference
                     var db = Firebase.firestore
@@ -110,9 +107,9 @@ class MainActivity : AppCompatActivity() {
                     var info = db.collection("user").document(uid)
                     info.get().addOnSuccessListener { documentSnapshot ->
                         var data = documentSnapshot.toObject<User_info>()
-                        Name.text = data?.DB_Name
-                        Age.text = data?.DB_Age
-                        Car.text = data?.DB_Car
+                        Name.setText(data?.DB_Name)
+                        Age.setText(data?.DB_Age)
+                        Car.setText(data?.DB_Car)
                         var islandRef = storageRef.child(uid)
                         val ONE_MEGABYTE: Long = 1024 * 1024
                         islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
@@ -175,7 +172,6 @@ class MainActivity : AppCompatActivity() {
         }
         recycle.layoutManager = LinearLayoutManager(this)
         recycle.adapter = CustomAdapter(DataList, this)
-
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

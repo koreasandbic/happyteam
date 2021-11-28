@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frag_mypage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F0ECE3">
 
     <EditText
         android:id="@+id/Edit_Age"
@@ -47,6 +48,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/font22"
         android:gravity="center"
         android:text="차종"
         android:textSize="25dp"
@@ -70,8 +72,8 @@
         android:layout_width="68dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/font22"
         android:gravity="center"
         android:text="이름"
         android:textSize="25sp"
@@ -83,8 +85,8 @@
         android:layout_width="68dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
         android:layout_marginTop="15dp"
+        android:fontFamily="@font/font22"
         android:gravity="center"
         android:text="나이"
         android:textSize="25dp"
@@ -112,6 +114,7 @@
         android:id="@+id/save"
         android:layout_width="127dp"
         android:layout_height="66dp"
+        android:fontFamily="@font/font22"
         android:gravity="center"
         android:text="저장하기"
         android:textSize="20sp"
