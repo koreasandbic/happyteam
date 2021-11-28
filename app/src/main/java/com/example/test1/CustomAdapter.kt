@@ -2,16 +2,18 @@ package com.example.test1
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.custom_list.view.*
-import java.security.AccessControlContext
-import java.util.ArrayList
+import java.util.*
+
 
 class Data(val profile:Int, val name:String)
 
@@ -92,6 +94,14 @@ class CustomAdapter(val DataList:ArrayList<Data>, val context:Context) : Recycle
                     context.startActivity(intent)
                 }
             }
+            var uid : String = "" // 각 해당하는 회원의 유저아이디를 가져온다.
+            val user = Firebase.auth.currentUser
+            if (user != null) {
+                uid = user.uid
+            }
+            var db = Firebase.firestore
+            var info = db.collection("user").document(uid)
+            info.update("db_Course", FieldValue.arrayUnion(curData.name))
         }
     }
 }

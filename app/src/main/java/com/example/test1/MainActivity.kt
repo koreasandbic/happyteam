@@ -2,16 +2,15 @@ package com.example.test1
 
 import User_info
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.BaseAdapter
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,6 +27,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
+import kotlinx.android.synthetic.main.my_course.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         Data(R.mipmap.ansung, name = "금광호수로"),
         Data(R.mipmap.ansan, name = "시화방조제길")
     )
+    var CourseList: List<String>? = null
+    var Favorite : List<String>? = null
     var viewList = ArrayList<View> ()
     var check = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,6 +112,7 @@ class MainActivity : AppCompatActivity() {
                         Name.setText(data?.DB_Name)
                         Age.setText(data?.DB_Age)
                         Car.setText(data?.DB_Car)
+                        CourseList = data?.DB_Course
                         var islandRef = storageRef.child(uid)
                         val ONE_MEGABYTE: Long = 1024 * 1024
                         islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
@@ -180,12 +183,9 @@ class MainActivity : AppCompatActivity() {
                 val message1 = data?.getStringExtra("name")
                 val message2 = data?.getStringExtra("age")
                 val message3 = data?.getStringExtra("car")
-                //val byteArray = data?.getByteArrayExtra("image")
-                //val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray!!.size)
                 Name.text = message1
                 Age.text = message2
                 Car.text = message3
-                //Photo.setImageBitmap(bitmap)
             }
         }
     }
