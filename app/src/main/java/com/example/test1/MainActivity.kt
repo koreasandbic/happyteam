@@ -29,7 +29,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
-//ㄴ
 
 class MainActivity : AppCompatActivity() {
     private var auth : FirebaseAuth? = null
