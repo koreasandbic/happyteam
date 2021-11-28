@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F0ECE3"
         android:orientation="vertical">
 
         <TextView
@@ -17,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/font33"
             android:gravity="center"
             android:text="안성시 금광호수로"
             android:textColor="#000000"
@@ -27,14 +29,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font22"
             android:gravity="center"
             android:text="구간 약 15km"
             android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/ansung_map"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="349dp"
+            android:layout_height="202dp"
+            android:layout_gravity="center"
             android:scaleType="centerInside"
             app:srcCompat="@mipmap/ansung_1" />
 
@@ -44,14 +48,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/font22"
             android:text="카카오지도로 보기" />
 
         <ImageView
             android:id="@+id/ansungpic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerInside"
+            android:layout_width="347dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center"
             android:layout_marginTop="24dp"
+            android:scaleType="centerInside"
             app:srcCompat="@mipmap/ansung" />
 
         <TextView
@@ -59,9 +65,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font11"
             android:gravity="center"
             android:text="코스명 : (안성시) 금광호수로"
-            android:textColor="#673AB7"
+            android:textColor="#030305"
             android:textSize="20sp" />
 
         <TextView
@@ -69,8 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font33"
             android:text="위치 : 안성시청 ~ 충북 진천"
-            android:textColor="#673AB7"
+            android:textColor="#030305"
             android:textSize="20sp" />
 
         <TextView
@@ -78,9 +86,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font33"
             android:gravity="center"
             android:text="주소 : 경기도 안성시 금광면 금광리 일대"
-            android:textColor="#673AB7"
+            android:textColor="#030305"
             android:textSize="20sp" />
 
         <TextView
@@ -90,9 +99,10 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
+            android:fontFamily="@font/font33"
             android:gravity="center"
             android:text="#금광호수는 V자 계곡형 호수로 주변 산세와 물이 좋고 낚시터로도 유명\n#우거진 산림 사이로 \n넓게 펼쳐지는 호수 풍광을 감상\n#길 양편의 무성한 나무들이 만드는 터널\n# 곳곳에 주차공간이 조성되어 여유 있게 풍경감상"
-            android:textColor="#000000"
+            android:textColor="#0359AE"
             android:textSize="18sp" />
 
         <RatingBar

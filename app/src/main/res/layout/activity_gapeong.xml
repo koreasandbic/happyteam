@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F0ECE3"
         android:orientation="vertical">
 
         <TextView
@@ -17,24 +18,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/font33"
             android:gravity="center"
             android:text="가평군 청평호반길,북한강변길"
             android:textColor="#000000"
-            android:textSize="34sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/gatext1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font22"
             android:gravity="center"
             android:text="구간 약 33km"
             android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/ga_map"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="338dp"
+            android:layout_height="217dp"
+            android:layout_gravity="center"
             android:scaleType="centerInside"
             app:srcCompat="@mipmap/ga_1" />
 
@@ -44,12 +48,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
+            android:fontFamily="@font/font22"
             android:text="카카오지도로 보기" />
 
         <ImageView
             android:id="@+id/gapic"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="334dp"
+            android:layout_height="238dp"
+            android:layout_gravity="center"
             android:layout_marginTop="24dp"
             android:scaleType="centerInside"
             app:srcCompat="@mipmap/gapeong" />
@@ -59,9 +65,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font11"
             android:gravity="center"
             android:text="코스명 : (가평군) 청평호반길,북한강변길"
-            android:textColor="#673AB7"
+            android:textColor="#030305"
             android:textSize="20sp" />
 
         <TextView
@@ -69,8 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font22"
             android:text="위치 : 가평읍 ~ 청평면"
-            android:textColor="#673AB7"
+            android:textColor="#030305"
             android:textSize="20sp" />
 
         <TextView
@@ -78,9 +86,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/font22"
             android:gravity="center"
             android:text="주소 : 경기도 가평군 가평읍 달전리~금대리(11.9km)\n경기도 가평군 청평면 삼회리~고성리(21.2km)"
-            android:textColor="#673AB7"
+            android:textColor="#030305"
             android:textSize="20sp" />
 
         <TextView
@@ -89,10 +98,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
+            android:fontFamily="@font/font22"
             android:gravity="center"
             android:text="#자라섬에서 청평호까지 북한강의 낭만 가득 찬길\n#자라섬, 남이섬, 청평호반 등의 아름다움\n
 #아침 햇살을 받아 발갛게 물드는 \n청평호의 아침 풍경\n#몽환적인 물안개 피는 모습"
-            android:textColor="#000000"
+            android:textColor="#0359AE"
             android:textSize="18sp" />
 
         <RatingBar
