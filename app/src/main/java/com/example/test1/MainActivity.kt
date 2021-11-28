@@ -10,6 +10,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.*
 import android.widget.BaseAdapter
+import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +28,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
-import kotlinx.android.synthetic.main.my_course.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,8 +44,7 @@ class MainActivity : AppCompatActivity() {
         Data(R.mipmap.ansung, name = "금광호수로"),
         Data(R.mipmap.ansan, name = "시화방조제길")
     )
-    var CourseList: List<String>? = null
-    var Favorite : List<String>? = null
+    var Favorite = ArrayList<String>()
     var viewList = ArrayList<View> ()
     var check = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         val intent_c = Intent(this, My_Course::class.java)
         viewpager.adapter = pagerAdapter()
         auth = Firebase.auth
+        var CourseList = ArrayList<String>()
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(state: Int) {
             }
@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
                         Name.setText(data?.DB_Name)
                         Age.setText(data?.DB_Age)
                         Car.setText(data?.DB_Car)
-                        CourseList = data?.DB_Course
+                        CourseList = data!!.DB_Course
                         var islandRef = storageRef.child(uid)
                         val ONE_MEGABYTE: Long = 1024 * 1024
                         islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
@@ -121,38 +121,6 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                     //데이터 베이스에 저장되어 있는 데이터들을 user_info데이터 클래스로 불러온다. 그후 이름,나이,차종을 저장한다.
-                    switch1.setOnClickListener {
-                        if (switch1.isChecked){
-                            check = 1
-                            switch1.setTextColor(Color.WHITE)
-                            Name.setTextColor(Color.WHITE)
-                            textView_name.setTextColor(Color.WHITE)
-                            Car.setTextColor(Color.WHITE)
-                            textView_car.setTextColor(Color.WHITE)
-                            course.setTextColor(Color.WHITE)
-                            Age.setTextColor(Color.WHITE)
-                            textView_age.setTextColor(Color.WHITE)
-                            App_version.setTextColor(Color.WHITE)
-                            profile.setTextColor(Color.WHITE)
-                            frag_mypage.setBackgroundColor(Color.BLACK)
-                            bottomNavigationView.setBackgroundColor(Color.BLACK)
-                    }
-                        else{
-                            check = 0
-                            switch1.setTextColor(Color.BLACK)
-                            Name.setTextColor(Color.BLACK)
-                            textView_name.setTextColor(Color.BLACK)
-                            Car.setTextColor(Color.BLACK)
-                            textView_car.setTextColor(Color.BLACK)
-                            Age.setTextColor(Color.BLACK)
-                            textView_age.setTextColor(Color.BLACK)
-                            course.setTextColor(Color.BLACK)
-                            App_version.setTextColor(Color.BLACK)
-                            profile.setTextColor(Color.BLACK)
-                            frag_mypage.setBackgroundColor(Color.WHITE)
-                            bottomNavigationView.setBackgroundColor(Color.WHITE)
-                    }
-                    }
                     App_version.setOnClickListener {
                         val versionName = BuildConfig.VERSION_NAME
                         Toast.makeText(this, versionName, Toast.LENGTH_SHORT).show()
@@ -161,6 +129,7 @@ class MainActivity : AppCompatActivity() {
                         startActivityForResult(intent_p, 100)
                     }
                     course.setOnClickListener{
+                        intent_c.putExtra("array",CourseList)
                         startActivity(intent_c)
                     }
                     Logout.setOnClickListener{

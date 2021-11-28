@@ -1,6 +1,5 @@
 package com.example.test1
 
-import User_info
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
