@@ -79,7 +79,7 @@
             android:fontFamily="@font/font22"
             android:text="위치 : 조안면 ~ 화도읍"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/namtext5"
@@ -90,7 +90,7 @@
             android:gravity="center"
             android:text="주소 : 경기도 남양주시 \n조안면 진중리~화도읍 금남리"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/namtext6"
@@ -100,17 +100,10 @@
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/font22"
-            android:gravity="center"
             android:text="#북한강의 서쪽강변 운길산, \n문안산의 정기와 서정미\n#시작부터 끝까지 탁 트이는 직선\n
 #북한강의 푸른 물빛과 \n주변의 짙은 초록색의 상쾌함\n#아침 햇살의 눈부신 드라이브 추천"
             android:textColor="#0359AE"
-            android:textSize="18sp" />
-
-        <RatingBar
-            android:id="@+id/nam_ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 

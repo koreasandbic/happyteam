@@ -78,7 +78,7 @@
             android:fontFamily="@font/font22"
             android:text="위치 : 남한산성면 ~ 남종면"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/gwangtext5"
@@ -90,7 +90,7 @@
             android:text="주소 : 경기도 광주시 남한산성면 남한산성로 2 \n남한산성면행정복지센터
 \n경기도 광주시 남종면 산수로 1692 \n팔당수질개선본부"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/gwangtext6"
@@ -99,17 +99,10 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
-            android:gravity="center"
             android:text="#산성천 맑은 물과 벚나무가 싱그러움을 선사\n#팔당호 벚꽃길은 3,000여 그루의 벚나무가 장관을 이루는 길\n
 #팔당호 경관과 어울려 한폭의 수채화를 선물"
             android:textColor="#0359AE"
-            android:textSize="18sp" />
-
-        <RatingBar
-            android:id="@+id/gwang_ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 

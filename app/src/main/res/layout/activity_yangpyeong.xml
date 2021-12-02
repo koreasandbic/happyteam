@@ -79,7 +79,7 @@
             android:fontFamily="@font/font22"
             android:text="위치 : 양서면 ~ 서종면"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/yangtext5"
@@ -90,7 +90,7 @@
             android:gravity="center"
             android:text="주소 : 경기도 양평군 양서면 양수리 711-1 두물머리 나루터"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/yangtext6"
@@ -100,17 +100,10 @@
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/font22"
-            android:gravity="center"
             android:text="#수도권 강변 드라이브 1번지\n#두물머리를 향해 흘러가는 북한강에서는 \n음이온이 다량 발생\n
 #운전자들의 심신을 안정시켜 줌\n#운길산 등 건너편 산 능선이 이루는 \n아름다운 하늘금"
             android:textColor="#0359AE"
-            android:textSize="18sp" />
-
-        <RatingBar
-            android:id="@+id/yang_ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 

@@ -79,7 +79,7 @@
             android:fontFamily="@font/font33"
             android:text="위치 : 안성시청 ~ 충북 진천"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/ansungtext5"
@@ -90,7 +90,7 @@
             android:gravity="center"
             android:text="주소 : 경기도 안성시 금광면 금광리 일대"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/ansungtext6"
@@ -100,16 +100,9 @@
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/font33"
-            android:gravity="center"
-            android:text="#금광호수는 V자 계곡형 호수로 주변 산세와 물이 좋고 낚시터로도 유명\n#우거진 산림 사이로 \n넓게 펼쳐지는 호수 풍광을 감상\n#길 양편의 무성한 나무들이 만드는 터널\n# 곳곳에 주차공간이 조성되어 여유 있게 풍경감상"
+            android:text="#금광호수는 V자 계곡형 호수로 주변 산세와 물이 좋고 낚시터로도 유명\n#우거진 산림 사이로 넓게 펼쳐지는 호수 풍광을 감상\n#길 양편의 무성한 나무들이 만드는 터널\n# 곳곳에 주차공간이 조성되어 여유 있게 풍경감상"
             android:textColor="#0359AE"
-            android:textSize="18sp" />
-
-        <RatingBar
-            android:id="@+id/ansung_ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 

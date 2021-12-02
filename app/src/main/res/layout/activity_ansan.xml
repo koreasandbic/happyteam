@@ -100,16 +100,9 @@
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/font11"
-            android:gravity="center"
             android:text="#오이도와 대부도 사이를 잇는 방조제 길\n#오른쪽에는 서해바다가, 왼쪽에는 시화호의 풍경이 합쳐 근사한 파노라마\n#날씨에 상관없이 언제라도 달리고 싶은 길"
             android:textColor="#0359AE"
-            android:textSize="18sp" />
-
-        <RatingBar
-            android:id="@+id/ansan_ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 

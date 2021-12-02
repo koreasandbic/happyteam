@@ -79,7 +79,7 @@
             android:fontFamily="@font/font22"
             android:text="위치 : 가평읍 ~ 청평면"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/gatext5"
@@ -90,26 +90,20 @@
             android:gravity="center"
             android:text="주소 : 경기도 가평군 가평읍 달전리~금대리(11.9km)\n경기도 가평군 청평면 삼회리~고성리(21.2km)"
             android:textColor="#030305"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/gatext6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/font22"
-            android:gravity="center"
             android:text="#자라섬에서 청평호까지 북한강의 낭만 가득 찬길\n#자라섬, 남이섬, 청평호반 등의 아름다움\n
 #아침 햇살을 받아 발갛게 물드는 \n청평호의 아침 풍경\n#몽환적인 물안개 피는 모습"
             android:textColor="#0359AE"
-            android:textSize="18sp" />
-
-        <RatingBar
-            android:id="@+id/ga_ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 
