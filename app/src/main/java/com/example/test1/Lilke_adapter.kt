@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import java.util.ArrayList
-//x
+
 class Data_like(val profile_like: Int, val name_like:String)
 
 class Like_adapter(val context: Context, val DataList:ArrayList<Data_like>) : BaseAdapter()
