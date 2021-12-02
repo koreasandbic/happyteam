@@ -44,8 +44,25 @@ class MainActivity : AppCompatActivity() {
         Data(R.mipmap.ansung, name = "금광호수로"),
         Data(R.mipmap.ansan, name = "시화방조제길")
     )
+
+    val DataList_like = arrayListOf(
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "sad"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "sadas"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "dca"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "bf"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "hgj"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "adg"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "vbdfn"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
+        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads")
+    )
+
     var viewList = ArrayList<View> ()
-    var check = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         var uid : String = "" // 각 해당하는 회원의 유저아이디를 가져온다.
         val user = Firebase.auth.currentUser
@@ -84,21 +101,11 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.home -> {viewpager.setCurrentItem(0)
                     recycle.visibility = View.VISIBLE
-                    if(check == 1){
-                        frag_home.setBackgroundColor(Color.BLACK)
-                    }
-                    else{
-                        frag_home.setBackgroundColor(Color.WHITE)
-                    }
+
                 }
                 R.id.like -> {viewpager.setCurrentItem(1)
                     recycle.visibility = View.INVISIBLE
-                    if(check == 1){
-                        frag_like.setBackgroundColor(Color.BLACK)
-                    }
-                    else{
-                        frag_like.setBackgroundColor(Color.WHITE)
-                    }
+                    list_like.adapter = Like_adapter(this, DataList_like)
                 }
                 R.id.profile -> {viewpager.setCurrentItem(2)
                     val storage = Firebase.storage

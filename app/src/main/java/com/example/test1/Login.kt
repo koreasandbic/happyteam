@@ -49,8 +49,8 @@ class Login : AppCompatActivity () {
             finish()
         }
     }
-    /*public override fun onStart() {
+    public override fun onStart() {
         super.onStart()
         moveMainPage(auth?.currentUser)
-    }*///자동 로그인 기능
+    }//자동 로그인 기능
 }
