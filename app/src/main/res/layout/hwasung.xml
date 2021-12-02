@@ -63,7 +63,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/font11"
             android:gravity="center"
             android:text="코스명 : (화성시) 화성방조제"
             android:textColor="#030305"
@@ -74,7 +73,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/font22"
             android:text="위치 : 매향리 ~ 궁평항"
             android:textColor="#030305"
             android:textSize="14sp" />
@@ -83,7 +81,6 @@
             android:id="@+id/hwatext5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/font22"
             android:gravity="center"
             android:text="주소 : 경기도 화성시 우정읍 기아자동차로 199   매향리 역사관"
             android:textColor="#030305"

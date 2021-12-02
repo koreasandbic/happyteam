@@ -33,11 +33,5 @@ class Paju : AppCompatActivity() {
         paju_ON.setOnClickListener {
             info.update("db_Favorite", FieldValue.arrayUnion("paju"))
         }
-        paju_OFF.setOnClickListener{
-            val updates = hashMapOf<String, Any>(
-                "db_Favorite" to FieldValue.arrayRemove("paju")
-            )
-            info.update(updates)
-        }
     }
 }

@@ -31,11 +31,13 @@ class Pocheon : AppCompatActivity() {
         pocheon_ON.setOnClickListener {
             info.update("db_Favorite", FieldValue.arrayUnion("pocheon"))
         }
-        pocheon_OFF.setOnClickListener{
+        /*pocheon_OFF.setOnClickListener{
             val updates = hashMapOf<String, Any>(
                 "db_Favorite" to FieldValue.delete()
             )
             info.update(updates)
+
         }
+        */
     }
 }

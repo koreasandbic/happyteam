@@ -29,7 +29,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/font22"
             android:gravity="center"
             android:text="구간 약 11km"
             android:textSize="18sp" />
@@ -48,7 +47,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/font22"
             android:text="카카오지도로 보기" />
 
         <ImageView
@@ -65,7 +63,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/font11"
             android:gravity="center"
             android:text="코스명 : (파주시) 자유로"
             android:textColor="#030305"
@@ -76,7 +73,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/font22"
             android:text="위치 : 교햐동 ~ 문산읍"
             android:textColor="#030305"
             android:textSize="14sp" />
@@ -86,7 +82,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/font22"
             android:gravity="center"
             android:text="주소 : 경기도 파주시 탄현면 필승로 369\n 오두산통일전망대"
             android:textColor="#030305"
@@ -109,12 +104,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="즐겨찾기 추가" />
-
-        <Button
-            android:id="@+id/paju_OFF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="즐겨찾기 삭제" />
 
     </LinearLayout>
 
