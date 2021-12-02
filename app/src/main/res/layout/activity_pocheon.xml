@@ -31,6 +31,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="구간 약 8km"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <ImageView
@@ -47,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:text="카카오지도로 보기" />
+            android:text="카카오지도로 보기"
+            android:textColor="@android:color/black" />
 
         <ImageView
             android:id="@+id/pochen"
@@ -81,7 +83,7 @@
             android:id="@+id/potext5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="주소 : 경기도 포천시 소홀읍 광릉수목원로 509"
             android:textColor="#030305"
             android:textSize="14sp" />
