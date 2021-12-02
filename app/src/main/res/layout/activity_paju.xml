@@ -104,6 +104,18 @@
             android:textColor="#0359AE"
             android:textSize="13sp" />
 
+        <Button
+            android:id="@+id/paju_ON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="즐겨찾기 추가" />
+
+        <Button
+            android:id="@+id/paju_OFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="즐겨찾기 삭제" />
+
     </LinearLayout>
 
 
