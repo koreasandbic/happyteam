@@ -20,3 +20,4 @@ class My_Course : AppCompatActivity() {
         course_list.adapter = adapter
     }
 }
+
