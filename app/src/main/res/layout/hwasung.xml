@@ -50,7 +50,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
             android:text="카카오지도로 보기"
-            android:textColor="black"
+            android:textColor="@android:color/black"
             android:textColorHint="@android:color/black" />
 
         <ImageView
