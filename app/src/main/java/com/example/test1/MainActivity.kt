@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
         Data(R.mipmap.ansung, name = "금광호수로"),
         Data(R.mipmap.ansan, name = "시화방조제길")
     )
-    var Favorite = ArrayList<String>()
     var viewList = ArrayList<View> ()
     var check = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,19 +106,19 @@ class MainActivity : AppCompatActivity() {
                     var db = Firebase.firestore
                     recycle.visibility = View.INVISIBLE
                     var info = db.collection("user").document(uid)
-                    info.get().addOnSuccessListener { documentSnapshot ->
-                        var data = documentSnapshot.toObject<User_info>()
-                        Name.setText(data?.DB_Name)
-                        Age.setText(data?.DB_Age)
-                        Car.setText(data?.DB_Car)
-                        CourseList = data!!.DB_Course
-                        var islandRef = storageRef.child(uid)
-                        val ONE_MEGABYTE: Long = 1024 * 1024
-                        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
-                            var bitmap : Bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
-                            Photo.setImageBitmap(bitmap)
+                        info.get().addOnSuccessListener { documentSnapshot ->
+                            var data = documentSnapshot.toObject<User_info>()
+                            Name.setText(data?.DB_Name)
+                            Age.setText(data?.DB_Age)
+                            Car.setText(data?.DB_Car)
+                            CourseList = data!!.DB_Course
+                            var islandRef = storageRef.child(uid)
+                            val ONE_MEGABYTE: Long = 1024 * 1024
+                            islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
+                                var bitmap : Bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
+                                Photo.setImageBitmap(bitmap)
+                            }
                         }
-                    }
                     //데이터 베이스에 저장되어 있는 데이터들을 user_info데이터 클래스로 불러온다. 그후 이름,나이,차종을 저장한다.
                     App_version.setOnClickListener {
                         val versionName = BuildConfig.VERSION_NAME

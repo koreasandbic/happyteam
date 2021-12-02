@@ -110,6 +110,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
+        <Button
+            android:id="@+id/pocheon_ON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="즐겨찾기 추가" />
+
+        <Button
+            android:id="@+id/pocheon_OFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="즐겨찾기 삭제" />
+
     </LinearLayout>
 
 
