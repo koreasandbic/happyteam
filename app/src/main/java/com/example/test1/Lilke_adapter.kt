@@ -33,3 +33,4 @@ class Like_adapter(val context: Context, val DataList:ArrayList<Data_like>) : Ba
     override fun getCount() = DataList.size
 
 }
+//이건 커밋용 주석
