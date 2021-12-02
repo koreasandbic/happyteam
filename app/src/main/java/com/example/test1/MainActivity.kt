@@ -97,7 +97,9 @@ class MainActivity : AppCompatActivity() {
                     var info = db.collection("user").document(uid)
                     info.get().addOnSuccessListener { documentSnapshot ->
                         var data = documentSnapshot.toObject<User_info>()
-                        Favorite = data?.DB_Favorite!!
+                        if(data?.DB_Favorite != null){
+                            Favorite = data?.DB_Favorite!!
+                        }
                     }
                     list_like.adapter = Like_adapter(this, Favorite)
                 }
@@ -106,10 +108,30 @@ class MainActivity : AppCompatActivity() {
                     var info = db.collection("user").document(uid)
                         info.get().addOnSuccessListener { documentSnapshot ->
                             var data = documentSnapshot.toObject<User_info>()
-                            Name.setText(data?.DB_Name)
-                            Age.setText(data?.DB_Age)
-                            Car.setText(data?.DB_Car)
-                            CourseList = data!!.DB_Course
+                            if(data?.DB_Name == null){
+                                Name.text = null
+                            }
+                            else{
+                                Name.text = data?.DB_Name
+                            }
+                            if(data?.DB_Age == null){
+                                Age.text = null
+                            }
+                            else{
+                                Age.text = data?.DB_Age
+                            }
+                            if(data?.DB_Car == null){
+                                Car.text = null
+                            }
+                            else{
+                                Car.text = data?.DB_Car
+                            }
+                            if(data?.DB_Course != null){
+                                CourseList = data!!.DB_Course
+                            }
+                            if(Photo == null){
+                                Photo == null
+                            }
                             var islandRef = storageRef.child(uid)
                             val ONE_MEGABYTE: Long = 1024 * 1024
                             islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
@@ -142,20 +164,6 @@ class MainActivity : AppCompatActivity() {
         recycle.layoutManager = LinearLayoutManager(this)
         recycle.adapter = CustomAdapter(DataList, this)
     }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when(resultCode){
-            Activity.RESULT_OK -> {
-                val message1 = data?.getStringExtra("name")
-                val message2 = data?.getStringExtra("age")
-                val message3 = data?.getStringExtra("car")
-                Name.text = message1
-                Age.text = message2
-                Car.text = message3
-            }
-        }
-    }
-
     inner class pagerAdapter : PagerAdapter() {
         override fun isViewFromObject(view: View, `object`: Any) = view == `object`
 

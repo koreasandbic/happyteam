@@ -15,8 +15,10 @@ class My_Course : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.my_course)
         List = intent.getSerializableExtra("array") as ArrayList<String>
-        List.reverse()
-        val adapter = List_CustomAdapter(this, List)
-        course_list.adapter = adapter
+        if(List != null) {
+            List.reverse()
+            val adapter = List_CustomAdapter(this, List)
+            course_list.adapter = adapter
+        }
     }
 }

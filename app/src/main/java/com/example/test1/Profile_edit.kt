@@ -49,15 +49,11 @@ class Profile_edit : AppCompatActivity() {
             resize.compress(Bitmap.CompressFormat.JPEG, 100, stream)
             val byteArray = stream.toByteArray()
             mountainsRef.putBytes(byteArray)
-            nextIntent.putExtra("name", name)
-            nextIntent.putExtra("age", age)
-            nextIntent.putExtra("car", car)
-            //nextIntent.putExtra("image", byteArray)
             var info = db.collection("user").document(uid)
             info.update("db_Name", name)
             info.update("db_Age", age)
             info.update("db_Car", car)
-            setResult(Activity.RESULT_OK, nextIntent)
+            //setResult(Activity.RESULT_OK, nextIntent)
             finish()
         }
         Edit_Photo.setOnClickListener{
@@ -95,21 +91,5 @@ class Profile_edit : AppCompatActivity() {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
         })
-    }
-
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if( resultCode == Activity.RESULT_OK){
-            if( requestCode == GALLERY) {
-                var ImnageData: Uri? = data?.data
-                try {
-                    val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, ImnageData)
-                    Edit_Photo.setImageBitmap(bitmap)
-                } catch (e:Exception) {
-                    e.printStackTrace()
-                }
-            }
-        }
     }
 }
