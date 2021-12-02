@@ -81,6 +81,7 @@
             android:id="@+id/hwatext5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
             android:text="주소 : 경기도 화성시 우정읍 기아자동차로 199   매향리 역사관"
             android:textColor="#030305"
