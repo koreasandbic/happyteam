@@ -94,7 +94,7 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/font33"
+            android:fontFamily="@font/hashtag"
             android:text="#금광호수는 V자 계곡형 호수로 주변 산세와 물이 좋고 낚시터로도 유명\n#우거진 산림 사이로 넓게 펼쳐지는 호수 풍광을 감상\n#길 양편의 무성한 나무들이 만드는 터널\n# 곳곳에 주차공간이 조성되어 여유 있게 풍경감상"
             android:textColor="#0359AE"
             android:textSize="13sp" />

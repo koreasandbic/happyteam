@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/font22"
+            android:fontFamily="@font/hashtag"
             android:text="#한강과 임진강이 만나는 파주 교하동에서 임진각 자유의 다리까지 이어지는 자유로\n#철조망, 검문소가 불러일으키는 묘한 긴장감\n
 #막힘없는 도로에 뻥 뚫리는 답답한 마음\n #아름다운 노을\n자유로 파주구간은 출판도시, 헤이리마을, 임진각 등 파주의 수많은 관광명소와 직접 접해있고 교통체증도 없어 자유롭게 드라이브를 즐길 수 있다."
             android:textColor="#0359AE"

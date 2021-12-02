@@ -89,12 +89,12 @@
 
         <TextView
             android:id="@+id/namtext6"
-            android:layout_width="wrap_content"
+            android:layout_width="282dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/font22"
+            android:fontFamily="@font/hashtag"
             android:text="#북한강의 서쪽강변 운길산, \n문안산의 정기와 서정미\n#시작부터 끝까지 탁 트이는 직선\n
 #북한강의 푸른 물빛과 \n주변의 짙은 초록색의 상쾌함\n#아침 햇살의 눈부신 드라이브 추천"
             android:textColor="#0359AE"

@@ -93,6 +93,7 @@
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
+            android:fontFamily="@font/hashtag"
             android:text="#산성천 맑은 물과 벚나무가 싱그러움을 선사\n#팔당호 벚꽃길은 3,000여 그루의 벚나무가 장관을 이루는 길\n
 #팔당호 경관과 어울려 한폭의 수채화를 선물"
             android:textColor="#0359AE"

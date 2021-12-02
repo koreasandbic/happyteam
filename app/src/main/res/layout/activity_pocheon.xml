@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/font22"
+            android:fontFamily="@font/hashtag"
             android:text="#‘광릉수목원로’ 불리는 98번 국지도\n#구불구불 휘어지는 길을 따라 높이 솟은 거목\n
 #광릉숲은 유네스코 생활 보전 지역으로도 선정\n 조선 세조가 자신의 능으로 정해 산림보호를 명한 이래로 한국전쟁을 견디며 500년 넘게 보존돼 왔다."
             android:textColor="#0359AE"
