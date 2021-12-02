@@ -103,7 +103,7 @@
             android:textSize="13sp" />
 
         <Button
-            android:id="@+id/yang_ON"
+            android:id="@+id/yangpyeong_ON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="즐겨찾기 추가" />

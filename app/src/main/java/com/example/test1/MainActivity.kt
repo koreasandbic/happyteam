@@ -45,22 +45,8 @@ class MainActivity : AppCompatActivity() {
         Data(R.mipmap.ansan, name = "시화방조제길")
     )
 
-    val DataList_like = arrayListOf(
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "sad"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "sadas"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "dca"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "bf"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "hgj"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "adg"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "vbdfn"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads"),
-        Data_like(R.drawable.common_full_open_on_phone, name_like = "ads")
-    )
 
+    var Favorite: ArrayList<String> = ArrayList<String>()
     var viewList = ArrayList<View> ()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -98,6 +84,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
         bottomNavigationView.setOnNavigationItemSelectedListener {
+            val storage = Firebase.storage
+            val storageRef = storage.reference
+            var db = Firebase.firestore
             when(it.itemId) {
                 R.id.home -> {viewpager.setCurrentItem(0)
                     recycle.visibility = View.VISIBLE
@@ -105,12 +94,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.like -> {viewpager.setCurrentItem(1)
                     recycle.visibility = View.INVISIBLE
-                    list_like.adapter = Like_adapter(this, DataList_like)
+                    var info = db.collection("user").document(uid)
+                    info.get().addOnSuccessListener { documentSnapshot ->
+                        var data = documentSnapshot.toObject<User_info>()
+                        Favorite = data?.DB_Favorite!!
+                    }
+                    list_like.adapter = Like_adapter(this, Favorite)
                 }
                 R.id.profile -> {viewpager.setCurrentItem(2)
-                    val storage = Firebase.storage
-                    val storageRef = storage.reference
-                    var db = Firebase.firestore
                     recycle.visibility = View.INVISIBLE
                     var info = db.collection("user").document(uid)
                         info.get().addOnSuccessListener { documentSnapshot ->

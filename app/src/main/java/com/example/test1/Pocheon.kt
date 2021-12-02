@@ -29,7 +29,7 @@ class Pocheon : AppCompatActivity() {
             startActivity(mIntent)
         }
         pocheon_ON.setOnClickListener {
-            info.update("db_Favorite", FieldValue.arrayUnion("pocheon"))
+            info.update("db_Favorite", FieldValue.arrayUnion("국립수목원로"))
         }
         /*pocheon_OFF.setOnClickListener{
             val updates = hashMapOf<String, Any>(

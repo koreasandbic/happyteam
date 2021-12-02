@@ -31,7 +31,7 @@ class Paju : AppCompatActivity() {
             startActivity(mIntent)
         }
         paju_ON.setOnClickListener {
-            info.update("db_Favorite", FieldValue.arrayUnion("paju"))
+            info.update("db_Favorite", FieldValue.arrayUnion("자유로"))
         }
     }
 }

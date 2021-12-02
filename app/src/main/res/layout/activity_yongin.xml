@@ -106,7 +106,7 @@
             android:textSize="13sp" />
 
         <Button
-            android:id="@+id/yong_ON"
+            android:id="@+id/yongin_ON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="즐겨찾기 추가" />
