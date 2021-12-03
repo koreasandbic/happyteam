@@ -53,4 +53,5 @@ class Login : AppCompatActivity () {
         super.onStart()
         moveMainPage(auth?.currentUser)
     }//자동 로그인 기능*/
+
 }
