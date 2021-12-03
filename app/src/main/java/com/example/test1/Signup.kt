@@ -27,13 +27,13 @@ class Signup : AppCompatActivity() {
                 ?.addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(
-                            this, "계정 생성 완료.",
+                            this, "계정을 생성했습니다.",
                             Toast.LENGTH_SHORT
                         ).show()
                         finish() // 가입창 종료
                     } else {
                         Toast.makeText(
-                            this, "계정 생성 실패",
+                            this, "형식을 다시 한번 확인해주세요",
                             Toast.LENGTH_SHORT
                         ).show()
                     }

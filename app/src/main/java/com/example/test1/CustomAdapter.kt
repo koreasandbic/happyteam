@@ -36,7 +36,6 @@ class CustomAdapter(val DataList:ArrayList<Data>, val context:Context) : Recycle
         holder.name.text = curData.name
 
         holder.itemView.setOnClickListener{
-            Toast.makeText(context, curData.name, Toast.LENGTH_SHORT).show()
             if(curData.name=="화성방조제길")
             {val intent = Intent( context, Hwasung::class.java)
                 context.startActivity(intent)}
