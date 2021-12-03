@@ -25,6 +25,7 @@ import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.custom_like.*
 import kotlinx.android.synthetic.main.frag_home.*
 import kotlinx.android.synthetic.main.frag_like.*
 import kotlinx.android.synthetic.main.frag_mypage.*
