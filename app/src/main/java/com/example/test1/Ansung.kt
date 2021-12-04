@@ -31,5 +31,4 @@ class Ansung : AppCompatActivity() {
             info.update("db_Favorite", FieldValue.arrayUnion("금광호수로"))
         }
     }
-
 }
