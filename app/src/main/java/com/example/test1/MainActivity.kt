@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         Data(R.mipmap.ansung, name = "금광호수로"),
         Data(R.mipmap.ansan, name = "시화방조제길")
     )
+
     var Favorite: ArrayList<String> = ArrayList<String>()
     var viewList = ArrayList<View> ()
     override fun onCreate(savedInstanceState: Bundle?) {
