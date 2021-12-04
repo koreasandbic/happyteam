@@ -40,17 +40,19 @@ class MainActivity : AppCompatActivity() {
         Data(R.mipmap.ansung, name = "금광호수로"),
         Data(R.mipmap.ansan, name = "시화방조제길")
     )
-
-
     var Favorite: ArrayList<String> = ArrayList<String>()
     var viewList = ArrayList<View> ()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         var uid : String = "" // 각 해당하는 회원의 유저아이디를 가져온다.
         val user = Firebase.auth.currentUser
         if (user != null) {
             uid = user.uid
+            Toast.makeText(this, uid, Toast.LENGTH_SHORT).show()
         }
+        val storage = Firebase.storage
+        val storageRef = storage.reference
+        var db = Firebase.firestore
+        var info = db.collection("user").document(uid)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
@@ -80,9 +82,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
         bottomNavigationView.setOnNavigationItemSelectedListener {
-            val storage = Firebase.storage
-            val storageRef = storage.reference
-            var db = Firebase.firestore
             when(it.itemId) {
                 R.id.home -> {viewpager.setCurrentItem(0)
                     recycle.visibility = View.VISIBLE
@@ -90,7 +89,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.like -> {viewpager.setCurrentItem(1)
                     recycle.visibility = View.INVISIBLE
-                    var info = db.collection("user").document(uid)
                     info.get().addOnSuccessListener { documentSnapshot ->
                         var data = documentSnapshot.toObject<User_info>()
                         if(data?.DB_Favorite != null){
@@ -101,7 +99,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.profile -> {viewpager.setCurrentItem(2)
                     recycle.visibility = View.INVISIBLE
-                    var info = db.collection("user").document(uid)
                         info.get().addOnSuccessListener { documentSnapshot ->
                             var data = documentSnapshot.toObject<User_info>()
                             if(data?.DB_Name == null){
@@ -123,10 +120,10 @@ class MainActivity : AppCompatActivity() {
                                 Car.text = data?.DB_Car
                             }
                             if(data?.DB_Course != null){
-                                CourseList = data!!.DB_Course
+                                CourseList = data!!.DB_Course!!
                             }
                             if(Photo == null){
-                                Photo == null
+                                Photo.setImageBitmap(null)
                             }
                             var islandRef = storageRef.child(uid)
                             val ONE_MEGABYTE: Long = 1024 * 1024
