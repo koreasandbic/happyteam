@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     android:background="#F0ECE3">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="80dp"
+        android:maxWidth="80dp"
+        android:src="@drawable/d_icon"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/sign_btn"
         android:layout_width="wrap_content"
