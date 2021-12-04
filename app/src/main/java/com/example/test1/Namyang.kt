@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
@@ -29,6 +30,7 @@ class Namyang : AppCompatActivity() {
         }
         namyang_ON.setOnClickListener {
             info.update("db_Favorite", FieldValue.arrayUnion("화음길"))
+            Toast.makeText(this, "즐겨찾기 추가", Toast.LENGTH_SHORT).show()
         }
     }
 }
