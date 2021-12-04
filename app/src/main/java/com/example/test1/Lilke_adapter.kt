@@ -102,11 +102,13 @@ class Like_adapter(val context: Context, var DataList:ArrayList<String>) : BaseA
                 }
             }
         }
+
         delete.setOnClickListener {
             val updates = hashMapOf<String, Any>(
                 "db_Favorite" to FieldValue.arrayRemove(name_like.text)
             )
             info.update(updates)
+            Toast.makeText(context, "즐겨찾기에서 삭제되었습니다", Toast.LENGTH_SHORT).show()
         }
         return view
     }
