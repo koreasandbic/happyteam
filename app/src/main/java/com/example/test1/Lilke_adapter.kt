@@ -41,7 +41,7 @@ class Like_adapter(val context: Context, var DataList:ArrayList<String>) : BaseA
             var bitmap : Bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
             profile_like.setImageBitmap(bitmap)
         }
-//ㄴ
+//ㄴㅠ
         val curData = DataList[p0]
         name_like.setOnClickListener {
             if(curData=="화성방조제길")
