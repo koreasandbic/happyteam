@@ -22,7 +22,7 @@ class Hwasung : AppCompatActivity () {
         }
         var db = Firebase.firestore
         var info = db.collection("user").document(uid)
-        val mIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=431446%2C1173982%2C447499%2C1212529&rt1=%EB%AC%B8%EB%B0%9CIC&rt2=%EB%8B%B9%EB%8F%99IC&rtIds=10417432%2C10265299&rtTypes=PLACE%2CPLACE"))
+        val mIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=447399%2C985901%2C429369%2C1004757&rt1=%EB%A7%A4%ED%96%A5%EB%A6%AC%EC%97%AD%EC%82%AC%EA%B8%B0%EB%85%90%EA%B4%80&rt2=%EA%B6%81%ED%8F%89%ED%95%AD&rtIds=766768297%2C14973250&rtTypes=PLACE%2CPLACE"))
         hwa_map.setOnClickListener {
             startActivity(mIntent)
         }
