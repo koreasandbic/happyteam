@@ -113,6 +113,7 @@ class Like_adapter(val context: Context, var DataList:ArrayList<String>) : BaseA
 
     override fun getItem(p0: Int) =  DataList[p0]
 
+
     override fun getItemId(p0: Int) = 0L
 
     override fun getCount() = DataList.size

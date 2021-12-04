@@ -33,7 +33,7 @@ class Paju : AppCompatActivity() {
         }
         paju_ON.setOnClickListener {
             info.update("db_Favorite", FieldValue.arrayUnion("자유로"))
-            Toast.makeText(this, "즐겨찾기 추가", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "즐겨찾기에 추가되었습니다", Toast.LENGTH_SHORT).show()
         }
     }
 }

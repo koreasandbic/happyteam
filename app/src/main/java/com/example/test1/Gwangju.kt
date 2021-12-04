@@ -29,7 +29,7 @@ class Gwangju : AppCompatActivity() {
         }
         gwangju_ON.setOnClickListener {
             info.update("db_Favorite", FieldValue.arrayUnion("남한산성,팔당호 벚꽃길"))
-            Toast.makeText(this, "즐겨찾기 추가", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "즐겨찾기에 추가되었습니다", Toast.LENGTH_SHORT).show()
         }
     }
 }
