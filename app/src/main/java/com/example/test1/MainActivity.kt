@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         if (user != null) {
             uid = user.uid
         }
-
         val storage = Firebase.storage
         val storageRef = storage.reference
         var db = Firebase.firestore
