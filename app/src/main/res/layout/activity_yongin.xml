@@ -95,13 +95,23 @@
             android:id="@+id/yongtext6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/hashtag"
             android:text="#자동차를 타고 봄꽃을 감상할 수 있는 명소\n#용인 8경 중 하나인 호암호수 앞산 벚꽃림
              \n#호수 주변 왕벚나무 산책로는 감상의 백미\n
 #산길을 굽이굽이 지나 도착하는 백련사"
+            android:textColor="#0359AE"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/nearbyyongin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/hashtag"
+            android:text="근처 관광지: 백련사"
             android:textColor="#0359AE"
             android:textSize="13sp" />
 

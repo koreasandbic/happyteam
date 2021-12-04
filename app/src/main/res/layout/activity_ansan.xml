@@ -94,10 +94,22 @@
             android:id="@+id/ansantext6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/hashtag"
             android:text="#오이도와 대부도 사이를 잇는 방조제 길\n#오른쪽에는 서해바다가, 왼쪽에는 시화호의 풍경이 합쳐 근사한 파노라마\n#날씨에 상관없이 언제라도 달리고 싶은 길"
+            android:textColor="#0359AE"
+            android:textSize="13sp" />
+
+
+        <TextView
+            android:id="@+id/nearbyansan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/hashtag"
+            android:text="근처 관광지: 시화나래휴게소, 시화나래조력문화관, 시화나래 조력문화관 달전망대"
             android:textColor="#0359AE"
             android:textSize="13sp" />
 

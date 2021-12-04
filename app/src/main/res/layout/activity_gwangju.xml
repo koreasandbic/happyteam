@@ -92,12 +92,22 @@
             android:id="@+id/gwangtext6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/hashtag"
             android:text="#산성천 맑은 물과 벚나무가 싱그러움을 선사\n#팔당호 벚꽃길은 3,000여 그루의 벚나무가 장관을 이루는 길\n
 #팔당호 경관과 어울려 한폭의 수채화를 선물"
+            android:textColor="#0359AE"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/nearbygwangju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/hashtag"
+            android:text="근처 관광지: 경안천습지생태공원"
             android:textColor="#0359AE"
             android:textSize="13sp" />
 
