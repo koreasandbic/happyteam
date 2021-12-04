@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        var intent = Intent(this, Search::class.java)
+        var intent = Intent(this, GoogleMap::class.java)
             when(item.itemId) {
                 R.id.search -> startActivity(intent)
             }
