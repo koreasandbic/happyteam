@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="구간 약 11.6km"
+            android:text="구간 약 11km"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 

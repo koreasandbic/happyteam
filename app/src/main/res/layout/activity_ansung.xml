@@ -113,7 +113,8 @@
         <Button
             android:id="@+id/ansung_ON"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="39dp"
+
             android:text="즐겨찾기 추가" />
 
     </LinearLayout>
