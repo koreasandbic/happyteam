@@ -116,7 +116,8 @@
             android:id="@+id/ansan_ON"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="즐겨찾기 추가" />
+            android:text="즐겨찾기 추가"
+            />
 
     </LinearLayout>
 
