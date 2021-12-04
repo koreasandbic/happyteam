@@ -18,7 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/font33"
             android:gravity="center"
             android:text="파주시 자유로"
             android:textColor="#000000"
