@@ -157,7 +157,7 @@
         android:layout_height="60dp"
         android:clickable="true"
         android:gravity="center"
-        android:text="내가 방문한 코스"
+        android:text="열람한 코스"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
