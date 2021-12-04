@@ -35,7 +35,6 @@ class Signup : AppCompatActivity() {
                         val user = Firebase.auth.currentUser
                         if (user != null) {
                             uid = user.uid
-                            Toast.makeText(this, uid, Toast.LENGTH_SHORT).show()
                         }
                         var db = Firebase.firestore
                         val first = User_info(null,null,null,null,null)

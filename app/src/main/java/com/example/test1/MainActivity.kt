@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         val user = Firebase.auth.currentUser
         if (user != null) {
             uid = user.uid
-            Toast.makeText(this, uid, Toast.LENGTH_SHORT).show()
         }
         val storage = Firebase.storage
         val storageRef = storage.reference
